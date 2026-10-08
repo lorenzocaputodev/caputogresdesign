@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const classi = ['intro', 'intro-titolo']
+      try { if (!sessionStorage.getItem('sipario')) classi.push('con-sipario') } catch {}
+      document.documentElement.classList.add(...classi)
+      setTimeout(() => document.documentElement.classList.remove(...classi), 6000)
+    }
+  </script>
+  <link rel="stylesheet" href="/src/style.css" />
+  <title>Caputo Gres Design — Lavandini su misura in gres a Ugento, Salento</title>
+  <meta name="description" content="Lavandini e lavabi su misura in gres porcellanato, fatti a mano a Ugento (LE). Bagno, cucina ed esterni in tutto il Salento. Informazioni su WhatsApp." />
+  <link rel="canonical" href="%SITO%/" />
+  <meta name="theme-color" content="#E8E7E3" />
+  <meta property="og:title" content="Caputo Gres Design" />
+  <meta property="og:description" content="Lavandini su misura in gres porcellanato, fatti a mano a Ugento, nel Salento." />
+  <meta property="og:image" content="%SITO%/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Caputo Gres Design" />
+  <meta property="og:url" content="%SITO%/" />
+  <meta property="og:locale" content="it_IT" />
+  <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.2A8.5 8.5 0 1 0 12 3.5z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></symbol>
+    <symbol id="i-prec" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 6-6 6 6 6"/></symbol>
+    <symbol id="i-succ" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></symbol>
+    <symbol id="i-tt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5v11a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3.5c.4 2.6 2.3 4.4 5 4.7"/></symbol>
+  </svg>
+  <div class="sipario" aria-hidden="true" data-sipario>
+    <div class="sipario__lastra sipario__lastra--a"><span class="sipario__bordo"></span></div>
+    <div class="sipario__lastra sipario__lastra--b"><span class="sipario__bordo"></span></div>
+    <div class="sipario__marchio"><p class="sipario__nome">Caputo Gres Design</p></div>
+  </div>
+  <a class="skip" href="#lavori">Salta ai lavori</a>
+
+  <header class="top" data-top>
+    <a class="brand" href="#top" aria-label="Caputo Gres Design, torna su">
+      <svg class="brand__mark" viewBox="0 0 48 42" aria-hidden="true">
+        <mask id="brand-mask"><rect width="48" height="42" fill="#fff"/><path d="M45.5 23.5C41 30 30 31.5 2 29M45.5 23.5C40 34 27 36.5 4 34.5M45.5 23.5C39 37.5 26 40.5 12 39" fill="none" stroke="#000" stroke-width="1.3"/></mask>
+        <circle cx="12" cy="11.5" r="6" fill="currentColor"/>
+        <path d="M40 22V9a5 5 0 0 0-10 0v1.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <path class="brand__drop" d="M30 13.6s-2 2.4-2 3.7a2 2 0 0 0 4 0c0-1.3-2-3.7-2-3.7z"/>
+        <path d="M3 23h42c0 10-9.5 17-21 17S3 33 3 23z" fill="currentColor" mask="url(#brand-mask)"/>
+      </svg>
+      <span class="brand__name">Caputo Gres Design</span>
+    </a>
+    <nav class="nav" id="menu" aria-label="Sezioni" data-menu>
+      <a href="#lavori">Lavori</a>
+      <a href="#come-nasce">Come nasce</a>
+      <a href="#finiture">Componi</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu" data-menu-btn><span></span><span></span></button>
+    <a class="btn btn--small" href="#contatti" aria-label="Scrivi su WhatsApp" data-wa-open><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span><span class="hide-sm">Scrivi su </span>WhatsApp</span></a>
+  </header>
+
+  <main>
+    <!-- --- Hero --- -->
+    <section class="hero" data-hero>
+      <div class="hero__copy">
+        <h1 class="hero__title" data-split>Lavandini su misura in gres porcellanato</h1>
+        <p class="hero__lead">Tagliati, uniti a 45° e rifiniti a mano, uno per uno. Pezzi unici per il bagno, la cucina o l'esterno, fatti a Ugento, in Salento.</p>
+      </div>
+
+      <div class="hero__stage">
+        <div class="sink-scene" data-sink="hero" data-finish="labradorite" data-scarico="dorata"></div>
+      </div>
+
+      <p class="hero__hint" aria-hidden="true">Scorri</p>
+    </section>
+
+    <div class="giunto" aria-hidden="true"><span></span></div>
+
+    <!-- --- Lavori --- -->
+    <section class="lavori" id="lavori" aria-labelledby="lavori-title">
+      <div class="lavori__pin" data-lavori-pin>
+        <div class="lavori__head">
+          <h2 id="lavori-title">Lavori</h2>
+          <p>Ogni lavandino nasce per uno spazio preciso. Eccone alcuni.</p>
+        </div>
+        <div class="lavori__viewport" role="region" aria-label="Galleria dei lavori">
+          <div class="lavori__track" data-lavori></div>
+        </div>
+        <div class="lavori__foot">
+          <div class="lavori__gruppo">
+            <p>Ti piace uno di questi?</p>
+            <a class="btn" href="#contatti" data-wa-open><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Chiedi un preventivo</a>
+          </div>
+          <div class="lavori__gruppo">
+            <p>Altri lavori su</p>
+            <a class="btn btn--linea btn--social" href="%INSTAGRAM%" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a>
+            <a class="btn btn--linea btn--social" href="%TIKTOK%" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ico" aria-hidden="true"><use href="#i-tt"/></svg><span>TikTok</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="giunto" aria-hidden="true"><span></span></div>
+
+    <!-- --- Come nasce --- -->
+    <section class="process" id="come-nasce" aria-labelledby="process-title">
+      <div class="process__aside">
+        <h2 id="process-title">Come nasce un lavandino</h2>
+        <p>Dalle misure al lavandino montato. Tutto passa dalle stesse mani.</p>
+        <figure class="process__foto" data-finish="carrara">
+          <div class="cornice">
+            <span class="cornice__lastra" aria-hidden="true"><span class="cornice__etichetta">Posa del fondo a scivolo</span></span>
+            <img src="lavori/lavorazione.webp" srcset="lavori/lavorazione-720.webp 720w, lavori/lavorazione.webp 960w" sizes="(max-width: 900px) 92vw, 384px" alt="Posa della lastra inclinata in un lavandino con scarico a scivolo" width="960" height="1200" loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+      <ol class="process__list">
+        <li>
+          <h3>Misure e preventivo</h3>
+          <p>Ci mandi foto e misure dello spazio. Insieme decidiamo forma, profondità e scarico, poi ti diamo un prezzo. Il prezzo dipende da misure, lastra e tipo di scarico.</p>
+        </li>
+        <li>
+          <h3>Scelta della lastra</h3>
+          <p>Effetto marmo, pietra, onice o legno. Se hai già il gres del pavimento o del rivestimento, possiamo usare quello.</p>
+        </li>
+        <li>
+          <h3>Taglio</h3>
+          <p>La lastra si taglia in pannelli con il disco diamantato. I bordi che si incontrano si tagliano a 45°.</p>
+        </li>
+        <li>
+          <h3>Unione a 45°</h3>
+          <p>I pannelli si incollano spigolo contro spigolo. La venatura gira sull'angolo e il lavandino sembra ricavato da un blocco unico.</p>
+        </li>
+        <li>
+          <h3>Rifinitura e posa</h3>
+          <p>Stuccatura, levigatura degli spigoli e sigillatura. Poi il montaggio a casa tua.</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="giunto" aria-hidden="true"><span></span></div>
+
+    <!-- --- Finiture --- -->
+    <section class="finiture" id="finiture" aria-labelledby="finiture-title">
+      <div class="finiture__copy">
+        <h2 id="finiture-title">Componi il tuo lavandino</h2>
+        <p>Una o due vasche, superficie e scarico: sono solo alcune delle combinazioni possibili. Trascina il lavandino per girarlo.</p>
+        <div class="scelta">
+          <h3 id="forma-label">Forma</h3>
+          <div class="swatches" role="radiogroup" aria-labelledby="forma-label" data-gruppo="forma">
+            <button class="swatch" role="radio" aria-checked="true" data-forma="singola"><span class="icona"><svg class="icona-forma" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="9" width="28" height="14" rx="2"/><rect class="buco" x="9" y="12" width="14" height="8" rx="1"/></svg></span>Una vasca</button>
+            <button class="swatch" role="radio" aria-checked="false" data-forma="doppia"><span class="icona"><svg class="icona-forma" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="10" width="30" height="12" rx="2"/><rect class="buco" x="4" y="13" width="10" height="6" rx="1"/><rect class="buco" x="18" y="13" width="10" height="6" rx="1"/></svg></span>Due vasche</button>
+          </div>
+        </div>
+        <div class="scelta">
+          <h3 id="superficie-label">Superficie</h3>
+          <div class="swatches" role="radiogroup" aria-labelledby="superficie-label" data-gruppo="finish">
+            <button class="swatch" role="radio" aria-checked="true" data-finish="labradorite"><span class="swatch__campione"></span>Labradorite</button>
+            <button class="swatch" role="radio" aria-checked="false" data-finish="blu"><span class="swatch__campione"></span>Onice blu</button>
+            <button class="swatch" role="radio" aria-checked="false" data-finish="carrara"><span class="swatch__campione"></span>Carrara</button>
+            <button class="swatch" role="radio" aria-checked="false" data-finish="calacatta"><span class="swatch__campione"></span>Calacatta oro</button>
+            <button class="swatch" role="radio" aria-checked="false" data-finish="crema"><span class="swatch__campione"></span>Crema</button>
+            <button class="swatch" role="radio" aria-checked="false" data-finish="grigio"><span class="swatch__campione"></span>Grigio venato</button>
+            <button class="swatch" role="radio" aria-checked="false" data-finish="nero"><span class="swatch__campione"></span>Nero striato</button>
+          </div>
+        </div>
+        <div class="scelta">
+          <h3 id="scarico-label">Scarico</h3>
+          <div class="swatches" role="radiogroup" aria-labelledby="scarico-label" data-gruppo="scarico">
+            <button class="swatch" role="radio" aria-checked="true" data-scarico="vista" data-nota="Piletta tonda cromata al centro della vasca, a filo del fondo."><span class="icona-scarico"></span>Piletta cromata</button>
+            <button class="swatch" role="radio" aria-checked="false" data-scarico="nera" data-nota="La stessa piletta in nero opaco: si abbina a rubinetti neri e superfici chiare."><span class="icona-scarico"></span>Piletta nera</button>
+            <button class="swatch" role="radio" aria-checked="false" data-scarico="dorata" data-nota="Piletta in ottone spazzolato: un tocco caldo sulle superfici scure."><span class="icona-scarico"></span>Piletta dorata</button>
+            <button class="swatch" role="radio" aria-checked="false" data-scarico="scomparsa" data-nota="Una lastra dello stesso gres copre lo scarico: l'acqua passa dalla fessura tutt'intorno."><span class="icona-scarico"></span>A scomparsa</button>
+            <button class="swatch" role="radio" aria-checked="false" data-scarico="scivolo" data-nota="Il fondo è una lastra inclinata: l'acqua scivola nella fessura lungo il muro."><span class="icona-scarico"></span>A scivolo</button>
+          </div>
+          <p class="scelta__nota" data-scarico-nota aria-live="polite">Piletta tonda cromata al centro della vasca, a filo del fondo.</p>
+        </div>
+        <div class="scelta">
+          <h3 id="rubinetto-label">Rubinetto</h3>
+          <div class="swatches" role="radiogroup" aria-labelledby="rubinetto-label" data-gruppo="rubinetto">
+            <button class="swatch" role="radio" aria-checked="true" data-rubinetto="muro"><span class="icona"><svg class="icona-forma" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="5" width="3" height="22"/><rect x="5" y="11" width="15" height="4" rx="1"/><rect x="17" y="15" width="3" height="3"/><rect x="8" y="21" width="22" height="6" rx="1"/></svg></span>A muro</button>
+            <button class="swatch" role="radio" aria-checked="false" data-rubinetto="piano"><span class="icona"><svg class="icona-forma" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="8" width="4" height="13"/><rect x="7" y="8" width="14" height="4" rx="1"/><rect x="18" y="12" width="3" height="3"/><rect x="2" y="21" width="28" height="6" rx="1"/></svg></span>Sul piano</button>
+          </div>
+        </div>
+        <div class="scelta">
+          <h3 id="mensola-label">Mensola</h3>
+          <div class="swatches" role="radiogroup" aria-labelledby="mensola-label" data-gruppo="mensola">
+            <button class="swatch" role="radio" aria-checked="true" data-mensola="no"><span class="icona"><svg class="icona-forma" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="11" width="28" height="7" rx="1"/></svg></span>Senza</button>
+            <button class="swatch" role="radio" aria-checked="false" data-mensola="si"><span class="icona"><svg class="icona-forma" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="6" width="28" height="7" rx="1"/><rect x="2" y="21" width="28" height="4" rx="1"/></svg></span>Con mensola</button>
+          </div>
+        </div>
+        <div class="idea">
+          <a class="btn" href="#contatti" data-wa-idea><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Parti da questa idea</a>
+          <p>È solo un punto di partenza: lastra, misure e dettagli li scegliamo insieme.</p>
+        </div>
+      </div>
+      <div class="finiture__stage" data-drag>
+        <div class="finiture__alone" data-finish="labradorite" aria-hidden="true"></div>
+        <div class="sink-scene" data-sink="finiture" data-finish="labradorite" data-scarico="vista"></div>
+      </div>
+    </section>
+
+    <div class="giunto" aria-hidden="true"><span></span></div>
+
+    <!-- --- Contatti --- -->
+    <section class="contatti" id="contatti" aria-labelledby="contatti-title">
+      <div class="contatti__testo">
+        <h2 id="contatti-title">Hai uno spazio da riempire?</h2>
+        <p>Mandaci una foto e le misure su WhatsApp. Ti rispondiamo con un'idea e un prezzo.</p>
+        <div class="contatti__actions">
+          <a class="btn" href="#contatti" data-wa-open><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Scrivi su WhatsApp</a>
+        </div>
+        <div class="contatti__info">
+          <a class="mappa" href="%MAPPA%" target="_blank" rel="noopener" aria-label="Ugento sulla mappa, apre Google Maps">
+            <svg viewBox="92 28 148 176" aria-hidden="true">
+              <path class="mappa__altre" d="M123 84L124 89L121 94L121 97L119 97L118 100L105 98L81 100L79 97L74 96L72 93L65 93L62 90L48 84L40 78L37 78L38 76L41 75L43 73L43 68L40 65L34 65L34 62L31 61L30 62L31 60L28 62L28 59L23 57L14 59L6 62L-4 70L-13 80L-20 74L-21 69L-28 68L-28 67L-30 68L-33 65L-31 59L-34 56L-33 54L-36 51L-35 43L-32 42L-35 36L-32 25L-37 22L-36 21L-35 22L-33 20L-31 21L-24 17L-22 24L-21 24L-19 24L-19 22L-14 18L-12 21L-8 20L-6 22L-3 20L-4 16L-1 15L3 15L10 11L10 13L7 17L11 20L16 19L20 19L21 21L22 20L25 22L29 21L31 15L37 11L40 12L43 10L43 4L51 3L52 6L49 6L51 9L49 9L48 10L53 15L56 16L59 14L58 17L64 19L66 25L69 25L68 27L70 36L76 40L72 51L78 64L82 65L83 70L87 73L86 71L87 71L89 73L90 72L91 73L93 71L92 69L100 69L100 70L107 72L108 78L112 79L113 82L119 81L120 82L122 82L123 84ZM124 21L130 25L142 27L143 26L146 30L149 30L148 31L147 30L146 33L142 34L145 34L146 35L148 32L155 34L155 38L159 42L158 49L167 58L163 63L165 63L164 65L163 63L161 65L164 66L163 68L159 63L156 68L152 67L149 70L146 69L143 75L136 76L127 79L124 84L119 81L113 82L112 79L108 78L107 72L100 70L100 69L92 69L93 71L91 73L90 72L89 73L87 71L86 71L87 73L83 70L82 65L78 64L72 51L76 40L69 36L68 27L69 25L66 25L64 19L58 17L59 14L65 14L64 9L65 7L60 6L56 3L50 0L59 -11L64 -14L77 -2L88 4L110 12L124 21Z"/>
+              <path class="mappa__lecce" d="M210 181L209 186L210 191L206 195L203 196L192 188L183 187L178 185L160 170L152 156L154 157L155 155L155 150L153 147L149 146L153 143L154 135L151 130L142 121L141 118L142 114L138 109L140 110L139 107L132 102L129 103L118 100L119 97L121 97L121 94L122 93L123 84L127 79L136 76L143 75L146 69L149 70L152 67L156 68L159 63L163 68L164 66L161 65L163 63L164 65L165 63L163 63L167 58L171 62L182 67L188 72L209 96L215 102L215 104L217 105L220 112L219 117L224 128L227 130L226 132L228 136L223 141L222 148L216 151L216 156L213 157L212 160L209 174L211 177L210 181Z"/>
+              <circle class="mappa__punto" cx="176" cy="170" r="4"/>
+              <text class="mappa__nome" x="168" y="173.5" text-anchor="end">Ugento</text>
+            </svg>
+            <span class="mappa__onda" aria-hidden="true"></span>
+          </a>
+          <dl class="contatti__dati">
+            <div>
+              <dt>Dove</dt>
+              <dd>Ugento (LE), 73059. Lavoriamo in tutto il Salento, al momento senza spedizioni.</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:%EMAIL%">%EMAIL%</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <figure class="contatti__foto" data-finish="crema">
+        <div class="cornice">
+          <span class="cornice__lastra" aria-hidden="true"><span class="cornice__etichetta">Effetto pietra crema</span></span>
+          <img src="lavori/crema-specchio.webp" srcset="lavori/crema-specchio-720.webp 720w, lavori/crema-specchio.webp 1080w" sizes="(max-width: 900px) 86vw, 40vw" alt="Lavabo sospeso effetto pietra crema con mensola e specchio tondo" width="1080" height="1350" loading="lazy" decoding="async">
+        </div>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__in">
+      <div>
+        <p class="foot__nome">Caputo Gres Design</p>
+        <p>© <span data-year></span> · Tutti i diritti riservati</p>
+      </div>
+      <div class="foot__azioni">
+        <a class="foot__social" href="mailto:%EMAIL%" aria-label="Email: %EMAIL%"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        <a class="foot__social" href="%INSTAGRAM%" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg></a>
+        <a class="foot__social" href="%TIKTOK%" target="_blank" rel="noopener" aria-label="TikTok"><svg class="ico" aria-hidden="true"><use href="#i-tt"/></svg></a>
+        <a class="btn btn--linea btn--small" href="#top">Torna su</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="wa" data-wa data-lenis-prevent aria-labelledby="wa-title">
+    <form class="wa__box" method="dialog">
+      <button class="wa__close" value="annulla" aria-label="Chiudi">&times;</button>
+      <h2 id="wa-title">Scrivi su WhatsApp</h2>
+      <p>Il messaggio è già pronto: cambialo come vuoi. In chat puoi mandare anche foto e misure.</p>
+      <label class="wa__label" for="wa-text">Messaggio</label>
+      <textarea id="wa-text" rows="4"></textarea>
+      <div class="wa__actions">
+        <button class="btn" value="invia" autofocus><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Apri WhatsApp</button>
+        <button class="btn btn--linea" value="annulla">Annulla</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="foto" data-foto data-lenis-prevent aria-labelledby="foto-titolo">
+    <form class="foto__box" method="dialog">
+      <button class="wa__close" value="chiudi" aria-label="Chiudi">&times;</button>
+      <img class="foto__img" alt="" width="1080" height="1350">
+      <div class="foto__testo">
+        <h2 id="foto-titolo"></h2>
+        <p data-foto-desc></p>
+        <p class="foto__finitura" data-foto-finitura></p>
+        <a class="btn" href="#contatti" data-wa-simile><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Chiedine uno simile</a>
+        <div class="foto__nav">
+          <button class="btn btn--linea" type="button" data-passo="-1" aria-label="Lavoro precedente"><svg class="ico" aria-hidden="true"><use href="#i-prec"/></svg></button>
+          <span data-foto-conta aria-live="polite"></span>
+          <button class="btn btn--linea" type="button" data-passo="1" aria-label="Lavoro successivo"><svg class="ico" aria-hidden="true"><use href="#i-succ"/></svg></button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

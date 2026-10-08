@@ -1,0 +1,58 @@
+export const LAVORI = [
+  {
+    titolo: 'Lavabo blu-verde',
+    descrizione: 'Piano spesso, piletta dorata',
+    finitura: 'Effetto labradorite',
+    materiale: 'labradorite',
+    foto: 'lavori/labradorite-sospeso.webp',
+  },
+  {
+    titolo: 'Piano sospeso',
+    descrizione: 'Vasca integrata, spigoli uniti a 45°',
+    finitura: 'Effetto Carrara',
+    materiale: 'carrara',
+    foto: 'lavori/carrara-esterno.webp',
+  },
+  {
+    titolo: 'Lavabo in pietra scura',
+    descrizione: 'Piano spesso, sospeso a parete',
+    finitura: 'Effetto nero venato',
+    materiale: 'nero',
+    foto: 'lavori/nero-sospeso.webp',
+  },
+  {
+    titolo: 'Doppio ripiano',
+    descrizione: 'Lavabo e mensola dallo stesso gres',
+    finitura: 'Effetto marmo bianco',
+    materiale: 'carrara',
+    foto: 'lavori/bianco-mensola.webp',
+  },
+  {
+    titolo: 'Lavabo blu',
+    descrizione: 'Sospeso, con rubinetto a muro e vasca integrata',
+    finitura: 'Effetto marmo blu venato',
+    materiale: 'blu',
+    foto: 'lavori/blu-sospeso.webp',
+  },
+  {
+    titolo: 'Piano lungo',
+    descrizione: 'Vasca integrata con piano d\'appoggio',
+    finitura: 'Effetto Carrara',
+    materiale: 'carrara',
+    foto: 'lavori/carrara-listelli.webp',
+  },
+  {
+    titolo: 'Lavabo con piano',
+    descrizione: 'Vasca e piano d\'appoggio in un pezzo solo',
+    finitura: 'Effetto nero striato',
+    materiale: 'nero',
+    foto: 'lavori/nero-travertino.webp',
+  },
+  {
+    titolo: 'Lavabo grigio',
+    descrizione: 'Rubinetto a muro, piletta a vista',
+    finitura: 'Effetto grigio venato',
+    materiale: 'grigio',
+    foto: 'lavori/grigio-sospeso.webp',
+  },
+]
