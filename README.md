@@ -2,6 +2,8 @@
 
 ![Vite](https://img.shields.io/badge/built%20with-Vite-646CFF) ![GSAP](https://img.shields.io/badge/animazioni-GSAP-0AE448) ![Cloudflare Pages](https://img.shields.io/badge/hosting-Cloudflare%20Pages-F38020)
 
+🌐 **Live:** [caputogresdesign.pages.dev](https://caputogresdesign.pages.dev/)
+
 > **Lavandini su misura in gres porcellanato, tagliati, uniti a 45° e rifiniti a mano a Ugento, nel Salento.**
 
 - 🪨 Il sito vetrina di un laboratorio artigianale: i lavori fatti, come nasce un lavandino e un lavandino 3D da comporre
@@ -68,6 +70,8 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+Per pubblicare su Cloudflare Pages: `npm run deploy` (serve l'accesso con `npx wrangler login`).
 
 La build genera in `dist/` anche la galleria in HTML, i dati strutturati per i motori di ricerca, `robots.txt`, `sitemap.xml` e gli header di sicurezza per Cloudflare.
 
