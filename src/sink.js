@@ -53,14 +53,14 @@ function mensola(L, P, T, sviluppo) {
   const piano = pezzo('lastra mensola', -L / 2, -P / 2, L, P, sviluppo.dx(-L / 2), sviluppo.dy(-P / 2))
   piano.style.transform = giu
   const lati = [
-    ['front', -L / 2, P / 2, L, S, '50% 0', 'rotateX(-90deg)', 0.04],
-    ['back', -L / 2, -P / 2 - S, L, S, '50% 100%', 'rotateX(90deg)', 0.3],
-    ['left', -L / 2 - S, -P / 2, S, P, '100% 50%', 'rotateY(-90deg)', 0.18],
-    ['right', L / 2, -P / 2, S, P, '0 50%', 'rotateY(90deg)', 0.34],
-  ].map(([lato, x, y, w, h, perno, giro, ombra]) => {
+    ['front', -L / 2, P / 2, L, S, '50% 0', 'rotateX(-90deg)'],
+    ['back', -L / 2, -P / 2 - S, L, S, '50% 100%', 'rotateX(90deg)'],
+    ['left', -L / 2 - S, -P / 2, S, P, '100% 50%', 'rotateY(-90deg)'],
+    ['right', L / 2, -P / 2, S, P, '0 50%', 'rotateY(90deg)'],
+  ].map(([lato, x, y, w, h, perno, giro]) => {
     const el = pezzo(`lastra mensola mensola--${lato}`, x, y, w, h, sviluppo.dx(x), sviluppo.dy(y))
     Object.assign(el.style, { transformOrigin: perno, transform: `${giu} ${giro}` })
-    el.style.setProperty('--shade', ombra)
+    el.style.setProperty('--shade', GONNE_CHIUSE[lato]['--shade'])
     return el
   })
   return [piano, ...lati]
@@ -163,7 +163,7 @@ export function buildSink(scene) {
     })
 
     rig.append(...offcuts, ...Object.values(gonne), ...conche.flatMap((c) => [c.fondo, ...c.pareti]), ...piano)
-    Object.assign(sink, { gonne, offcuts, forma })
+    Object.assign(sink, { gonne, offcuts, forma, sviluppo: { dx, dy } })
     return sink.dettagli()
   }
 
@@ -171,8 +171,7 @@ export function buildSink(scene) {
     Object.assign(sink.extra, scelte)
     const { L, P, T, vasche } = FORME[sink.forma]
     rig.querySelectorAll('.mensola, .rubinetto').forEach((el) => el.remove())
-    const sviluppo = { dx: (x) => x + L / 2 + T, dy: (y) => y + P / 2 + T }
-    if (sink.extra.mensola) rig.prepend(...mensola(L, P, T, sviluppo))
+    if (sink.extra.mensola) rig.prepend(...mensola(L, P, T, sink.sviluppo))
     if (sink.extra.rubinetto) rig.append(...vasche.flatMap((v) => rubinetto(sink.extra.rubinetto, v.cx, P)))
     scene.dataset.mensola = sink.extra.mensola ? 'si' : 'no'
     return sink

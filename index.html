@@ -8,7 +8,7 @@
       const classi = ['intro', 'intro-titolo']
       try { if (!sessionStorage.getItem('sipario')) classi.push('con-sipario') } catch {}
       document.documentElement.classList.add(...classi)
-      setTimeout(() => document.documentElement.classList.remove(...classi), 6000)
+      window.riservaIntro = setTimeout(() => document.documentElement.classList.remove(...classi), 6000)
     }
   </script>
   <link rel="stylesheet" href="/src/style.css" />

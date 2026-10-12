@@ -1,7 +1,8 @@
 import gsap from 'gsap'
 
-import { apriDialogo, apriWhatsApp, chiudiSulFondo, chiusoDialogo, minuscola } from './dialoghi.js'
+import { apriDialogo, apriWhatsApp, chiudiSulFondo, chiusoDialogo } from './dialoghi.js'
 import { arrivato, ferma, mm, riprendi, stato } from './scorrimento.js'
+import { minuscola } from './testo.js'
 
 const PAUSA_GALLERY = 0.45
 const RIARMO = 0.97
@@ -42,6 +43,17 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   }
   stato.annulla.add(annullaPausa)
 
+  const azzera = () => (lavoriViewport.scrollLeft = 0)
+  const mostraScheda = (e) => {
+    azzera()
+    const card = e.target.closest('.lavoro')
+    if (!card || !stato.lenis) return
+    const x = gsap.utils.clamp(0, distanza(), card.offsetLeft + card.offsetWidth / 2 - lavoriViewport.clientWidth / 2)
+    stato.lenis.scrollTo(scorri.scrollTrigger.start + x, { force: true })
+  }
+  lavoriViewport.addEventListener('scroll', azzera)
+  lavoriViewport.addEventListener('focusin', mostraScheda)
+
   track.querySelectorAll('.lavoro').forEach((card) => {
     const media = card.querySelector('.lavoro__media')
     const segui = { trigger: card, containerAnimation: scorri, scrub: true }
@@ -57,6 +69,8 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   return () => {
     annullaPausa()
     stato.annulla.delete(annullaPausa)
+    lavoriViewport.removeEventListener('scroll', azzera)
+    lavoriViewport.removeEventListener('focusin', mostraScheda)
   }
 })
 
@@ -97,11 +111,15 @@ fotoDialog.addEventListener('keydown', (e) => {
   mostraFoto(fotoAperta + passo)
 })
 let swipe = null
+fotoImg.draggable = false
+fotoImg.addEventListener('dragstart', (e) => e.preventDefault())
 fotoImg.addEventListener('pointerdown', (e) => (swipe = e.isPrimary ? e.clientX : null))
+fotoImg.addEventListener('pointercancel', () => (swipe = null))
 fotoImg.addEventListener('pointerup', (e) => {
-  if (swipe === null || Math.abs(e.clientX - swipe) < 50) return
-  mostraFoto(fotoAperta + (e.clientX < swipe ? 1 : -1))
+  const inizio = swipe
   swipe = null
+  if (inizio === null || Math.abs(e.clientX - inizio) < 50) return
+  mostraFoto(fotoAperta + (e.clientX < inizio ? 1 : -1))
 })
 chiudiSulFondo(fotoDialog)
 fotoDialog.addEventListener('close', () => chiusoDialogo('foto'))

@@ -4,6 +4,7 @@ import { SplitText } from 'gsap/SplitText'
 import { ferma, mqRidotto, riprendi } from './scorrimento.js'
 
 // --- Apertura ---
+clearTimeout(window.riservaIntro)
 const inAttesa = []
 let aperta = true
 export const quandoAperta = (fn) => (aperta ? fn() : inAttesa.push(fn))

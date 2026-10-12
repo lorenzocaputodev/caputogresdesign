@@ -1,9 +1,10 @@
 import gsap from 'gsap'
 
-import { apriWhatsApp, minuscola } from './dialoghi.js'
+import { apriWhatsApp } from './dialoghi.js'
 import { setAssembled, showcase } from './lavandini.js'
 import { mqRidotto } from './scorrimento.js'
 import { FORME } from './sink.js'
+import { minuscola } from './testo.js'
 
 // --- Finiture: superficie, scarico e trascinamento ---
 function gruppoRadio(gruppo, onScelta) {
@@ -54,7 +55,11 @@ export function adattaLavandino() {
   stage.style.setProperty('--sposta', `${(destra - sinistra) / 2}px`)
 }
 adattaLavandino()
-addEventListener('resize', adattaLavandino)
+let adattamento = 0
+addEventListener('resize', () => {
+  cancelAnimationFrame(adattamento)
+  adattamento = requestAnimationFrame(adattaLavandino)
+})
 const rotZ = gsap.quickTo(showcase.rig, 'rotation', { duration: 0.6, ease: 'power3.out' })
 const rotX = gsap.quickTo(showcase.tilt, 'rotationX', { duration: 0.6, ease: 'power3.out' })
 const rimbalzo = () => !mqRidotto.matches && gsap.fromTo(showcase.rig, { scale: 0.94 }, { scale: 1, duration: 0.6, ease: 'back.out(2)' })

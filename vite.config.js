@@ -1,9 +1,11 @@
+import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { defineConfig } from 'vite'
 import { CONFIG } from './src/config.js'
 import { LAVORI } from './src/lavori.js'
+import { minuscola } from './src/testo.js'
 
 // --- SEO ---
 const datiStrutturati = {
@@ -23,7 +25,6 @@ const datiStrutturati = {
 
 // --- Lavori ---
 const html = (s) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`)
-const minuscola = (s) => s.charAt(0).toLowerCase() + s.slice(1)
 const piccola = (foto) => foto.replace(/\.webp$/, '-720.webp')
 const srcset = (foto, sizes) => existsSync(`public/${piccola(foto)}`) ? ` srcset="${html(piccola(foto))} 720w, ${html(foto)} 1080w" sizes="${sizes}"` : ''
 
@@ -44,9 +45,17 @@ const lavori = LAVORI.map((l) => `
 
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${CONFIG.sito}/sitemap.xml\n`
 
-const sitemap = () => `<?xml version="1.0" encoding="UTF-8"?>
+const ultimaModifica = () => {
+  try {
+    return execFileSync('git', ['log', '-1', '--format=%cs', '--', 'index.html', 'src', 'public'], { encoding: 'utf8' }).trim()
+  } catch {
+    return ''
+  }
+}
+
+const sitemap = (data = ultimaModifica()) => `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>${CONFIG.sito}/</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>
+  <url><loc>${CONFIG.sito}/</loc>${data ? `<lastmod>${data}</lastmod>` : ''}</url>
 </urlset>
 `
 

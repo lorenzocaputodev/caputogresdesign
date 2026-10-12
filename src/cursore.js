@@ -7,7 +7,6 @@ if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
   cursore.setAttribute('aria-hidden', 'true')
   cursore.innerHTML = '<div class="cursore__anello"><span>Trascina</span></div><div class="cursore__punto"></div>'
   document.body.append(cursore)
-  document.documentElement.classList.add('ha-cursore')
 
   const [anello, punto] = cursore.children
   const anelloX = gsap.quickTo(anello, 'x', { duration: 0.45, ease: 'power3.out' })
@@ -45,5 +44,8 @@ if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
   )
   addEventListener('pointerdown', () => cursore.classList.add('is-premuto'))
   addEventListener('pointerup', () => cursore.classList.remove('is-premuto'))
-  document.documentElement.addEventListener('pointerleave', () => cursore.classList.add('is-fuori'))
+  document.documentElement.addEventListener('pointerleave', () => {
+    cursore.classList.add('is-fuori')
+    document.documentElement.classList.remove('ha-cursore')
+  })
 }

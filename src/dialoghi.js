@@ -5,8 +5,6 @@ import { ferma, riprendi } from './scorrimento.js'
 const waDialog = document.querySelector('[data-wa]')
 const waText = waDialog.querySelector('textarea')
 let ultimoTesto = CONFIG.whatsappText
-const NOMI_PROPRI = /^(Carrara|Calacatta)/
-export const minuscola = (s) => s.replace(/^\S+/, (p) => (NOMI_PROPRI.test(p) ? p : p.toLowerCase()))
 waText.value = CONFIG.whatsappText
 
 export function apriDialogo(dialogo, chi) {

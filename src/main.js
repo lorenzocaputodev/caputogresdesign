@@ -17,7 +17,9 @@ document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new D
 
 // --- Immagini ---
 const inAttesa = (fn) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout: 2000 }) : setTimeout(fn, 200))
-addEventListener('load', () => quandoAperta(() => setTimeout(decodifica, 1500)))
+const risparmio = navigator.connection?.saveData || /(^|-)2g$/.test(navigator.connection?.effectiveType ?? '')
+const primoScroll = () => addEventListener('scroll', () => setTimeout(decodifica, 300), { once: true, passive: true })
+if (!risparmio) addEventListener('load', () => quandoAperta(primoScroll))
 function decodifica() {
   const coda = [
     ...document.querySelectorAll('img[loading="lazy"]'),
