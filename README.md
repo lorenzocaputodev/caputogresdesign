@@ -6,15 +6,15 @@
 
 > **Lavandini su misura in gres porcellanato, tagliati, uniti a 45° e rifiniti a mano a Ugento, nel Salento.**
 
-- 🪨 Il sito vetrina di un laboratorio artigianale: i lavori fatti, come nasce un lavandino e un lavandino 3D da comporre
-- 💬 Nessun e-commerce: chi visita sceglie un'idea e scrive su WhatsApp con un messaggio già pronto
+- 🪨 Il sito vetrina di un laboratorio artigianale: i lavori fatti, come nasce un lavandino e un lavandino 3D con cui provare le combinazioni
+- 💬 Nessun e-commerce: chi visita sceglie un'idea e scrive su WhatsApp con un messaggio già pronto, oppure per email
 
 ## 📸 Schermate
 
 <p align="center">
   <img src="assets/screenshots/sito_hero.webp" alt="Apertura del sito" width="32%">
   <img src="assets/screenshots/sito_lavori.webp" alt="Lavori" width="32%">
-  <img src="assets/screenshots/sito_componi.webp" alt="Componi il tuo lavandino" width="32%">
+  <img src="assets/screenshots/sito_componi.webp" alt="Prova le combinazioni" width="32%">
 </p>
 
 <p align="center"><sub>Apertura · Lavori · Componi</sub></p>
@@ -27,8 +27,9 @@
 - 🖼️ Lavori in una galleria a scorrimento orizzontale, con il campione della lastra dietro ogni foto
 - 🔍 Ogni lavoro si apre in grande, con «Chiedine uno simile» che prepara già il messaggio
 - 🛠️ «Come nasce»: i cinque passi della lavorazione, dalle misure alla posa
-- 🧩 «Componi il tuo lavandino»: lavandino 3D da girare col mouse o col dito, con forma, superficie, scarico, rubinetto e mensola
-- 💬 Contatto solo su WhatsApp, con messaggio modificabile prima dell'invio
+- 🧩 «Prova le combinazioni»: lavandino 3D da girare col mouse o col dito, con forma, superficie, scarico, rubinetto e mensola
+- 💬 Contatto su WhatsApp, con messaggio modificabile prima dell'invio, o per email
+- 🔐 Pagina privacy breve e chiara, linkata dal footer
 - 📱 Pensato per telefono e computer, con menu a pannello sugli schermi piccoli
 - ♿ Navigabile da tastiera e rispettoso di «Riduci movimento»: con l'impostazione attiva le animazioni si spengono
 
@@ -80,6 +81,7 @@ La build genera in `dist/` anche la galleria in HTML, i dati strutturati per i m
 ## 📂 Struttura essenziale
 
 - `index.html` → markup e testi della pagina
+- `privacy.html` → pagina privacy, servita come `/privacy`
 - `src/main.js` → avvio dei moduli
 - `src/hero.js`, `src/galleria.js`, `src/componi.js`, … → un modulo per ogni sezione
 - `src/sink.js` → il lavandino 3D in CSS
@@ -87,15 +89,16 @@ La build genera in `dist/` anche la galleria in HTML, i dati strutturati per i m
 - `src/config.js` → indirizzo del sito, contatti e social
 - `src/lavori.js` → i lavori della galleria
 - `public/` → foto dei lavori, texture delle superfici, icone e pagina 404
-- `vite.config.js` → plugin che generano galleria, SEO e header
+- `vite.config.js` → plugin che generano galleria, SEO, anno del footer e header; build delle due pagine
 
 ---
 
 ## 🔐 Privacy
 
 - Nessun cookie e nessun sistema di tracciamento
-- Nessun backend: il contatto passa direttamente da WhatsApp
+- Nessun modulo né backend: il contatto passa direttamente da WhatsApp o dall'email
 - Font e risorse serviti dallo stesso sito, senza servizi esterni
+- Informativa completa su [/privacy](https://caputogresdesign.pages.dev/privacy)
 
 ---
 
