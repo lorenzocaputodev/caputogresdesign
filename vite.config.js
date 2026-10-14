@@ -17,9 +17,9 @@ const datiStrutturati = {
   logo: `${CONFIG.sito}/logo.png`,
   image: `${CONFIG.sito}/og.jpg`,
   email: CONFIG.email,
-  address: { '@type': 'PostalAddress', addressLocality: 'Ugento', addressRegion: 'LE', postalCode: '73059', addressCountry: 'IT' },
+  address: { '@type': 'PostalAddress', addressLocality: 'Ugento', addressRegion: 'LE', addressCountry: 'IT' },
   hasMap: CONFIG.mappa,
-  areaServed: [{ '@type': 'City', name: 'Ugento' }, { '@type': 'AdministrativeArea', name: 'Provincia di Lecce' }, { '@type': 'Place', name: 'Salento' }],
+  areaServed: { '@type': 'City', name: 'Ugento' },
   sameAs: [CONFIG.instagram, CONFIG.tiktok],
 }
 
@@ -61,16 +61,18 @@ const sitemap = (data = ultimaModifica()) => `<?xml version="1.0" encoding="UTF-
 
 const seo = () => ({
   name: 'seo',
-  transformIndexHtml: (pagina) =>
-    pagina
+  transformIndexHtml: (pagina, { path }) => {
+    const testo = pagina
       .replaceAll('%SITO%', CONFIG.sito)
+      .replaceAll('%ANNO%', new Date().getFullYear())
       .replaceAll('%EMAIL%', CONFIG.email)
       .replaceAll('%MAPPA%', html(CONFIG.mappa))
       .replaceAll('%INSTAGRAM%', CONFIG.instagram)
       .replaceAll('%TIKTOK%', CONFIG.tiktok)
       .replace('<div class="lavori__track" data-lavori></div>', `<div class="lavori__track" data-lavori>${lavori}
           </div>`)
-      .replace('</head>', `  <script type="application/ld+json">${JSON.stringify(datiStrutturati)}</script>\n</head>`),
+    return path === '/index.html' ? testo.replace('</head>', `  <script type="application/ld+json">${JSON.stringify(datiStrutturati)}</script>\n</head>`) : testo
+  },
   generateBundle() {
     this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robots })
     this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap() })
@@ -138,4 +140,5 @@ const intestazioni = () => ({
 // --- Config ---
 export default defineConfig({
   plugins: [seo(), precarica(), intestazioni()],
+  build: { rolldownOptions: { input: ['index.html', 'privacy.html'] } },
 })

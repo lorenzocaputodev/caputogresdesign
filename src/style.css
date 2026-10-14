@@ -805,6 +805,19 @@ html.con-dialogo .cursore { opacity: 0; }
 .foot__social:hover { background: var(--gesso); }
 .foot__social .ico { width: 1.25rem; height: 1.25rem; }
 .foot__azioni .btn { margin-left: 0.7rem; }
+.foot__link { color: var(--ardesia); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 0.2em; transition: color 0.2s; }
+.foot__link:hover { color: var(--acqua); }
+
+/* --- Privacy --- */
+.legale__top { position: static; }
+.legale { max-width: calc(40rem + 2 * var(--gutter)); margin: 0 auto; padding: clamp(2.5rem, 8vw, 5rem) var(--gutter) clamp(4rem, 10vw, 7rem); }
+.legale h1 { font-size: var(--t-xl); font-variation-settings: 'wdth' 118; margin-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+.legale h2 { font-size: var(--t-md); font-variation-settings: 'wdth' 112; line-height: 1.1; text-wrap: balance; margin: 2.2rem 0 0.6rem; }
+.legale p + p { margin-top: 0.8rem; }
+.legale p { color: var(--testo-tenue); }
+.legale a { color: var(--acqua); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+.legale a:hover { color: var(--ardesia); }
+.legale .legale__data { margin-top: 2.8rem; font-size: var(--t-sm); }
 
 /* --- Telefono --- */
 @media (max-width: 760.98px) {
